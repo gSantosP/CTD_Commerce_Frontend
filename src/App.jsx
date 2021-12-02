@@ -1,15 +1,7 @@
-import Header from './components/Header/Header';
-//import Footer from './components/Footer/Footer';
-//import Home from './components/Home/Home';
-// import { Carousel } from 'react-bootstrap';
+import RouterList from "./router";
 
 function App() {
-  return (
-    <>
-    <Header />
-
-    </>
-  );
+  return <RouterList />
 }
 
 export default App;
