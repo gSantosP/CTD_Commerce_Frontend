@@ -1,0 +1,20 @@
+@import '../../style/variables.scss';
+
+#default-header{
+    background-color: $light-gray;
+
+    .logo:hover{
+        opacity: $hover-opacity;
+    }
+
+    .nav-item a{
+        color: $deep-blue;
+        border-radius: 20px;
+        padding: 8px 16px;
+        color: inherit;
+
+        &:hover{
+            background-color: #e5e5e5;
+        }
+    }
+}
