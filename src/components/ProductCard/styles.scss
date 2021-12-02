@@ -2,13 +2,12 @@
 
 .product-card{
     width: 286px;
-
-    &:hover{
-        box-shadow: $card-shadow;
-    }
+    margin: 12px;
+    box-shadow: $card-shadow;
     
     img{
        max-width: 100%;
+
     }
     
 }
