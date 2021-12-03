@@ -12,7 +12,7 @@ export default function Header(){
                 <Link to="/home"><Logo className="logo"/></Link>
                 <Nav>
                     <Nav.Item className="nav-item" ><Link to="/about_us">Sobre nos</Link></Nav.Item>
-                    <Nav.Item className="nav-item" ><Link to="/products">Sobre nos</Link></Nav.Item>
+                    <Nav.Item className="nav-item" ><Link to="/products">Produtos</Link></Nav.Item>
                     <Nav.Item className="nav-item" ><Link to="#products">Contato</Link></Nav.Item>
                     <Nav.Item className="nav-item" ><Link to="/carrinho"><CartIcon/></Link></Nav.Item>
                 </Nav>
