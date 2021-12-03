@@ -4,7 +4,7 @@ const products = [
         title:"Calça Masculina",
         price:"50.00",
         description:"Tamanho G",
-        image:"https://imgur.com/00LE2ky",
+        image:"https://i.imgur.com/00LE2ky.jpeg",
         categories:{
             name:"Roupa Masculina"
         }
@@ -14,7 +14,7 @@ const products = [
         title:"Calça Feminina",
         price:"100.00",
         description:"Tamanho P",
-        image:"https://imgur.com/NDPruwB",
+        image:"https://i.imgur.com/NDPruwB.jpeg",
         categories:{
             name:"Roupa Feminina"
         }
@@ -24,7 +24,7 @@ const products = [
         title:"Camiseta Feminina",
         price:"70.00",
         description:"Tamanho PP",
-        image:"https://imgur.com/ZXSqPTe",
+        image:"https://i.imgur.com/ZXSqPTe.jpeg",
         categories:{
             name:"Roupa Feminina"
         }
@@ -34,7 +34,7 @@ const products = [
         title:"Camiseta Masculina",
         price:"90.00",
         description:"Tamanho M",
-        image:"https://imgur.com/p8tswmT",
+        image:"https://i.imgur.com/p8tswmT.jpeg",
         categories:{
             name:"Roupa Masculina"
         }
@@ -44,7 +44,7 @@ const products = [
         title:"Anel ",
         price:"1200.00",
         description:"pedra branca",
-        image:"https://imgur.com/pG3YkPi",
+        image:"https://i.imgur.com/pG3YkPi.jpeg",
         categories:{
             name:"Joalheria"
         }
@@ -54,7 +54,7 @@ const products = [
         title:"Anel ",
         price:"900.00",
         description:"pedra laranja",
-        image:"https://imgur.com/HcvRueU",
+        image:"https://i.imgur.com/HcvRueU.jpeg",
         categories:{
             name:"Joalheria"
         }
@@ -64,7 +64,7 @@ const products = [
         title:"Pingente",
         price:"510.00",
         description:" Cor prata",
-        image:"https://imgur.com/8igFtM5",
+        image:"https://i.imgur.com/8igFtM5.jpeg",
         categories:{
             name:"Joalheria"
         }
@@ -74,7 +74,7 @@ const products = [
         title:"Echo Dot",
         price:"2500.00",
         description:"Assistente virtual",
-        image:"https://imgur.com/4UTaUu3",
+        image:"https://i.imgur.com/4UTaUu3.jpeg",
         categories:{
             name:"Eletrônicos"
         }
@@ -84,7 +84,7 @@ const products = [
         title:"Mouse",
         price:"300.00",
         description:"Garantia 3 anos",
-        image:"https://imgur.com/uNmrQpr",
+        image:"https://i.imgur.com/uNmrQpr.jpeg",
         categories:{
             name:"Eletrônicos"
         }
@@ -94,7 +94,7 @@ const products = [
         title:"iPhone 11 Apple 64GB Branco",
         price:"5000.00",
         description:"Telefone celular (Smart)",
-        image:"https://imgur.com/ea6xYQW",
+        image:"https://i.imgur.com/ea6xYQW.jpeg",
         categories:{
             name:"Eletrônicos"
         }
