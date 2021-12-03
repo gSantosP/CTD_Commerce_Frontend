@@ -1,0 +1,21 @@
+@import '../../style/variables.scss';
+
+.contribuitors-card{
+    width: 286px;
+    margin: 12px;
+    box-shadow: $card-shadow;
+    img{
+        max-width: 80%;
+        border-radius: 50%;
+        margin: auto;
+    }
+    .contribuitors-card-button{
+        background-color: $deep-blue;
+        border: none;
+        width: 170px;
+        border-radius: 25px;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        align-items: center;
+    }
+}
