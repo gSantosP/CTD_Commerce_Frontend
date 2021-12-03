@@ -1,13 +1,13 @@
 import { Card, Button } from "react-bootstrap";
-import batata from "../../assets/svg/perfil.svg"
+import perfil from "../../assets/svg/perfil.svg"
 import gitHub from "../../assets/svg/git-hub.svg"
 import linkedin from "../../assets/svg/linkedin.svg"
 import "./styles.scss"
 
-export default function ContribuitorsCards({ img, name, sobrenome, linkdin, github }) {
+export default function ContributorsCards({ img, name, sobrenome, linkdin, github }) {
     return (
         <Card className = "contribuitors-card">
-            <Card.Img variant="top" src={batata} />
+            <Card.Img variant="top" src={perfil} />
             <Card.Body>
                 <Card.Title> {name} </Card.Title>
                 <Card.Title> {sobrenome} </Card.Title>

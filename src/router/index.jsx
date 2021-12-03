@@ -1,17 +1,16 @@
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
-import ProductCard from "../components/ProductCard"
-import ContribuitorsCard from "../components/ContribuitorsCards"
+import Contributors from '../pages/Contributors';
 
 export default function RouterList() {
   return (
     <BrowserRouter>
       <Header />
-      <ProductCard id={1} title="titulo" description="descricao" price={100.00} />
-      <ContribuitorsCard name="Matheus" sobrenome="Silva" />
       <Routes>
-
+        <Route path="/colaboradores" element={ <Contributors/> } />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }

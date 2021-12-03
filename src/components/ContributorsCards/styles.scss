@@ -2,12 +2,12 @@
 
 .contribuitors-card{
     width: 286px;
-    margin: 12px;
     box-shadow: $card-shadow;
+
     img{
         max-width: 80%;
         border-radius: 50%;
-        margin: auto;
+        margin: 12px auto;
     }
     .contribuitors-card-button{
         background-color: $deep-blue;

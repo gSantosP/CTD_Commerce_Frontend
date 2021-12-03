@@ -1,0 +1,18 @@
+@import '../../style/variables.scss';
+
+#default-footer{
+    color: $light-gray;
+    background-color: $deep-blue;
+    margin-top: 80px;
+
+    p{
+        border-top: $default-border;
+        text-align: center;
+        margin: 0;
+    }
+
+    a{
+        color: inherit;
+        font-weight: bold;
+    }
+}
