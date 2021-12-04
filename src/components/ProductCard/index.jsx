@@ -13,7 +13,7 @@ export default function ProductCard({ id, title, description, categories, price,
                     <br/>
                     <span className="price">{`R$ ${price}`}</span> 
                 </Card.Text>
-                <Button variant="primary" > Gastar dinheiro </Button>
+                <Button variant="primary" > Comprar </Button>
             </Card.Body>
         </Card>
     )
