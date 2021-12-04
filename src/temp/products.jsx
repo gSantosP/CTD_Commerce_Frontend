@@ -44,7 +44,7 @@ const products = [
         title:"Anel ",
         price:"1200.00",
         description:"pedra branca",
-        image:"https://i.imgur.com/pG3YkPi.jpeg",
+        image:"https://i.imgur.com/2Z7Zpb1.jpeg",
         categories:{
             name:"Joalheria"
         }

@@ -1,10 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import './variables.scss';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root{
+  min-height: 100vh;
+  position: relative;
+}
+
+#main-content{
+  padding-bottom: 200px;
 }
 
 body {
@@ -15,4 +25,30 @@ body {
 
 a{
   text-decoration: none;
+}
+
+.card{
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-group{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1rem;
+
+  .grid-item{
+    justify-self: center;
+  }
+}
+
+.btn-primary{
+  border-radius: 24px;
+  background-color: $deep-blue;
+  border: none;
+
+  &:hover{
+    background-color: $deep-blue;
+    opacity: .9;
+  }
 }

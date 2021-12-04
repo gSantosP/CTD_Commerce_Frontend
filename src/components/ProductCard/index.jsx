@@ -9,8 +9,9 @@ export default function ProductCard({ id, title, description, categories, price,
             <Card.Body>
                 <Card.Title> {title} </Card.Title>
                 <Card.Text>
-                    <span> {description} </span> <br/>
-                    <span> {price} </span> 
+                    <span>{description}</span>
+                    <br/>
+                    <span className="price">{`R$ ${price}`}</span> 
                 </Card.Text>
                 <Button variant="primary" > Gastar dinheiro </Button>
             </Card.Body>

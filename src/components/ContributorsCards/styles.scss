@@ -3,19 +3,46 @@
 .contribuitors-card{
     width: 286px;
     box-shadow: $card-shadow;
-
+    border-radius: 12px;
+    overflow: hidden;
+    
     img{
-        max-width: 80%;
         border-radius: 50%;
-        margin: 12px auto;
+        max-width: 70%;
+        margin: 30px auto;
     }
+
+    .card-title.h5{
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 24px;
+    }
+
     .contribuitors-card-button{
-        background-color: $deep-blue;
-        border: none;
-        width: 170px;
-        border-radius: 25px;
-        display: grid;
-        grid-template-columns: 1fr 6fr;
-        align-items: center;
+        width: 100%;
+        position: relative;
+
+        a{
+            color: $light-gray;
+            font-weight: bold;
+        }
+
+        &::before{
+            content: " ";
+            position: absolute;
+            left: 8px;
+            height: calc(100% - 16px);
+            width: 24px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &.github::before{
+            background-image: url('../../assets/svg/git-hub.svg');
+        }
+
+        &.linkedin::before{
+            background-image: url('../../assets/svg/linkedin.svg');
+        }
     }
 }

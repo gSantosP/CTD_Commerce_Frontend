@@ -1,18 +1,19 @@
 import { Card, Button } from "react-bootstrap";
-import perfil from "../../assets/svg/perfil.svg"
-import gitHub from "../../assets/svg/git-hub.svg"
-import linkedin from "../../assets/svg/linkedin.svg"
 import "./styles.scss"
 
-export default function ContributorsCards({ img, name, linkdin, github }) {
+export default function ContributorsCards({ img, name, linkdinUrl, githubUrl }) {
     return (
         <Card className = "contribuitors-card">
-            <Card.Img variant="top" src={perfil} />
+            <Card.Img variant="top" src={img} />
             <Card.Body>
                 <Card.Title> {name} </Card.Title>
-                <Button variant="primary" className="contribuitors-card-button" > <img src={ linkedin } alt="Logo-linkedin" /> Linkedin </Button>
+                <a href={linkdinUrl} target="_blank" rel="noreferrer">
+                <Button variant="primary" className="contribuitors-card-button py-2 my-2 github" >Linkedin</Button>
+                </a>
                 <br/>
-                <Button variant="primary" className="contribuitors-card-button" > <img src={ gitHub } alt="Logo-git-hub" /> GitHub </Button>
+                <a href={githubUrl} target="_blank" rel="noreferrer">
+                    <Button variant="primary" className="contribuitors-card-button py-2 my-2 linkedin" >GitHub</Button>
+                </a>
             </Card.Body>
         </Card>
     )
