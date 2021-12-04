@@ -25,8 +25,8 @@ export default function NotFound() {
     return (
         <div id="not-found-content" className="d-flex align-items-center flex-column">
             <img src={NotFoundIlustration} alt="not found ilustration" />
-            <MainTittle>Ops! Não encontramos o que você está procurando.</MainTittle>
-            <p>Você será redirecionado em:</p>
+            <MainTittle>Ops! Não encontramos o que procurando.</MainTittle>
+            <p>Você será redirecionado em</p>
             <br/>
             <spam>{count}</spam>
         </div>
