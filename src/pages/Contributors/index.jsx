@@ -24,7 +24,7 @@ export default function Contributors() {
             </CardGroup>
             <div className="section-sobre my-5">
                 <h2>Sobre o Projeto</h2>
-                <div className="desc-projeto mx-5 py-md-2 mx-md-2 px-5 ">
+                <div className="desc-projeto mx-2 mx-lg-5 px-lg-5 px-2 ">
                     <p>Camada frontend de uma aplicação fullstack construida utilizando React,
                         ReactBoostrap, JAVA/Spring e MySQL.
                         O projeto serviu como instrumento avaliativo do penúltimo bimestre do primeiro ano do curso

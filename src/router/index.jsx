@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Contributors from '../pages/Contributors';
 import Home from '../pages/Home';
 import Products from '../pages/Products';
+import Product from '../pages/Product';
 import NotFound from '../pages/NotFound'
 
 export default function RouterList() {
@@ -16,6 +17,8 @@ export default function RouterList() {
           <Route path="/about_us" element={ <Contributors/> } />
           <Route path="/products" element={ <Products/> } />
           <Route path="/products/:categoryParam" element={ <Products/> } />
+          <Route path="/products/productPage/:productId" element={ <Product/> } />
+
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </main>

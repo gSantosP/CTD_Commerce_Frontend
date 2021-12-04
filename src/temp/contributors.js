@@ -20,7 +20,7 @@ const contributors = [
     linkedin:"",
     github: "https://github.com/Zique02"
 },{
-    img:"",
+    img:"https://avatars.githubusercontent.com/u/85570707?v=4",
     name:"Matheus Da Silva",
     linkedin:"https://www.linkedin.com/in/matheus-silva-ti",
     github: "https://github.com/Matheusdsilva01"

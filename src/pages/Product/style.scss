@@ -1,0 +1,17 @@
+@import '../../style/variables.scss';
+
+
+.produto-box-holder{
+    background-color: #EEEEEE;
+        height:25rem;
+
+}
+
+.img-holder{
+    height:25rem;
+    img{
+        height:25rem;
+        width: fit-content;
+    }
+}
+

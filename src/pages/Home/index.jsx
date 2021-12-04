@@ -1,11 +1,11 @@
-import "./styles.scss"; 
+import "./styles.scss";
 
 import { Carousel } from "react-bootstrap";
 import bannerImg1 from '../../assets/img/banner/banner-1.png'
 import bannerImg2 from '../../assets/img/banner/banner-2.png'
 import bannerImg3 from '../../assets/img/banner/banner-3.png'
 
-import { Container, CardGroup } from 'react-bootstrap'
+import { CardGroup } from 'react-bootstrap'
 import products from '../../temp/products.jsx'
 import ProductCard from '../../components/ProductCard'
 import ProductFilter from '../../components/ProductFilter/index.jsx'
@@ -40,86 +40,87 @@ export default function Home() {
             </div>
 
 
-
             <div className="cards my-5 py-5">
-                <Carousel>
-                    <Carousel.Item>
+                <div className="carousel-holder">
+                    <Carousel>
+                        <Carousel.Item>
 
 
-                        <CardGroup className="list-unstyled">
+                            <CardGroup className="list-unstyled">
 
 
-                            <li className="grid-item" key={1} >
-                                <ProductCard id= {1} title={"title"} description={"description"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsa"} price={"dasdsa"} />
-                            </li>
+                                <li className="grid-item" key={1} >
+                                    <ProductCard id={1} title={"title"} description={"description"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsa"} price={"dasdsa"} />
+                                </li>
 
-                            <li className="grid-item" key={2} >
-                                        <ProductCard id={2} title={"shuahsua"} description={"asdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsad"} price={"asdas"} />
-                                    </li>
+                                <li className="grid-item" key={2} >
+                                    <ProductCard id={2} title={"shuahsua"} description={"asdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsad"} price={"asdas"} />
+                                </li>
 
-                                    <li className="grid-item" key={3} >
-                                        <ProductCard id={3} title={"tchubaruba"} description={"asdasdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdasd"} price={"adsd"} />
-                                    </li>
-
-
-
-                        </CardGroup>
-
-
-                    </Carousel.Item>
-
-                    <Carousel.Item>
-
-
-                        <CardGroup className="list-unstyled">
-
-
-                            <li className="grid-item" key={1} >
-                                <ProductCard id= {1} title={"title"} description={"description"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsa"} price={"dasdsa"} />
-                            </li>
-
-                            <li className="grid-item" key={2} >
-                                        <ProductCard id={2} title={"shuahsua"} description={"asdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsad"} price={"asdas"} />
-                                    </li>
-
-                                    <li className="grid-item" key={3} >
-                                        <ProductCard id={3} title={"tchubaruba"} description={"asdasdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdasd"} price={"adsd"} />
-                                    </li>
+                                <li className="grid-item" key={3} >
+                                    <ProductCard id={3} title={"tchubaruba"} description={"asdasdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdasd"} price={"adsd"} />
+                                </li>
 
 
 
-                        </CardGroup>
+                            </CardGroup>
 
 
-                    </Carousel.Item>
+                        </Carousel.Item>
 
-                    <Carousel.Item>
-
-
-<CardGroup className="list-unstyled">
+                        <Carousel.Item>
 
 
-    <li className="grid-item" key={1} >
-        <ProductCard id= {1} title={"title"} description={"description"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsa"} price={"dasdsa"} />
-    </li>
-
-    <li className="grid-item" key={2} >
-                <ProductCard id={2} title={"shuahsua"} description={"asdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsad"} price={"asdas"} />
-            </li>
-
-            <li className="grid-item" key={3} >
-                <ProductCard id={3} title={"tchubaruba"} description={"asdasdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdasd"} price={"adsd"} />
-            </li>
+                            <CardGroup className="list-unstyled">
 
 
+                                <li className="grid-item" key={1} >
+                                    <ProductCard id={1} title={"title"} description={"description"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsa"} price={"dasdsa"} />
+                                </li>
 
-</CardGroup>
+                                <li className="grid-item" key={2} >
+                                    <ProductCard id={2} title={"shuahsua"} description={"asdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsad"} price={"asdas"} />
+                                </li>
+
+                                <li className="grid-item" key={3} >
+                                    <ProductCard id={3} title={"tchubaruba"} description={"asdasdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdasd"} price={"adsd"} />
+                                </li>
 
 
-</Carousel.Item>
 
-                </Carousel>
+                            </CardGroup>
 
+
+                        </Carousel.Item>
+
+                        <Carousel.Item>
+
+
+                            <CardGroup className="list-unstyled">
+
+
+                                <li className="grid-item" key={1} >
+                                    <ProductCard id={1} title={"title"} description={"description"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsa"} price={"dasdsa"} />
+                                </li>
+
+                                <li className="grid-item" key={2} >
+                                    <ProductCard id={2} title={"shuahsua"} description={"asdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdsad"} price={"asdas"} />
+                                </li>
+
+                                <li className="grid-item" key={3} >
+                                    <ProductCard id={3} title={"tchubaruba"} description={"asdasdasd"} image={"https://i.imgur.com/00LE2ky.jpeg"} categories={"asdasd"} price={"adsd"} />
+                                </li>
+
+
+
+                            </CardGroup>
+
+
+                        </Carousel.Item>
+
+                    </Carousel>
+
+                </div>
 
             </div>
 
