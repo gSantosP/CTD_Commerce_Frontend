@@ -1,7 +1,7 @@
 import './style.scss';
 import React from "react"
-import { ReactComponent as Logo } from "../../assets/svg/Logo.svg"
-import { ReactComponent as CartIcon } from "../../assets/svg/cart-icon.svg"
+import { ReactComponent as Logo } from "../../assets/svg/icons/Logo.svg"
+import { ReactComponent as CartIcon } from "../../assets/svg/icons/cart-icon.svg"
 import { Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
