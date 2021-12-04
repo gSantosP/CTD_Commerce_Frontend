@@ -16,7 +16,7 @@ export default function Products(){
         //if(categoryParam === undefined)
         //     apiCall("all")
         //else
-        //    apiCall(categoryParam)
+        //    apiCall(`categorias/${categoryParam}`)
 
     },[categoryParam])
 
