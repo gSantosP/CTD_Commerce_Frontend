@@ -2,23 +2,37 @@ import {Container, CardGroup} from 'react-bootstrap'
 import products from '../../temp/products.jsx'
 import ProductCard from '../../components/ProductCard'
 import ProductFilter from '../../components/ProductFilter/index.jsx'
-import { useParams } from 'react-router'
-import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router'
+import { useEffect, useState} from 'react'
 import apiCall from '../../apiCall/index.js'
 export default function Products(){
 
     const {categoryParam} = useParams();
+    const [categorias, setCategorias] = useState([]);
+    const [produtos, setProdutos] = useState([]);
+
+    const navigate = useNavigate();
+
     
 
-    useEffect(()=>{
 
+    useEffect(()=>{
+       //setCategorias(apiCall("/categorias"))
+        //let callResponse;
 
         //if(categoryParam === undefined)
-        //     apiCall("all")
+        //    callResponse = apiCall("all")
         //else
-        //    apiCall(`categorias/${categoryParam}`)
+        //    callResponse = apiCall(`produtos/${categoryParam}`)
 
-    },[categoryParam])
+        //if(callResponse.status)
+           // navigate("*")
+        //else
+           // setProdutos(callResponse)
+
+
+    },[categoryParam,navigate])
+    
 
 
     return(

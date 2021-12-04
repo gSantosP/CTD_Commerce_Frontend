@@ -3,9 +3,12 @@
         text-align: center;
         margin: 3rem 0;
     }
-    p{
-        text-align: center;
-        justify-content: center;
+    
+    .desc-projeto{
+        display: flex;
+        p{
+            font-size: 1.5rem;
+            text-align: justify;
+        }
     }
-
 }
