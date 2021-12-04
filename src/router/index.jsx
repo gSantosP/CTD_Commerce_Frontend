@@ -15,6 +15,7 @@ export default function RouterList() {
           <Route path="/" element={ <Home/> } />
           <Route path="/about_us" element={ <Contributors/> } />
           <Route path="/products" element={ <Products/> } />
+          <Route path="/products/:categoryParam" element={ <Products/> } />
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </main>
