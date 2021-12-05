@@ -42,7 +42,7 @@ a{
   }
 }
 
-#bootstrap-override .card-body .btn-primary{
+.btn-primary{
   border-radius: 24px;
   background-color: $deep-blue;
   border: none;
@@ -51,5 +51,12 @@ a{
   &:hover{
     background-color: $deep-blue;
     opacity: .9;
+  }
+}
+
+.swal2-container{
+  button.swal2-confirm{
+    background-color: $deep-blue !important;
+    color: $light-gray !important;
   }
 }

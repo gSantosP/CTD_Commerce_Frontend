@@ -1,48 +1,37 @@
 import {Container, CardGroup} from 'react-bootstrap'
-import products from '../../temp/products.jsx'
 import ProductCard from '../../components/ProductCard'
 import ProductFilter from '../../components/ProductFilter/index.jsx'
-import { useParams, useNavigate } from 'react-router'
-import { useEffect, useState} from 'react'
-import apiCall from '../../apiCall/index.js'
+import api from '../../services/api';
+import { useCallback, useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+
 export default function Products(){
 
-    const {categoryParam} = useParams();
-    const [categorias, setCategorias] = useState([]);
-    const [produtos, setProdutos] = useState([]);
+    const [products, setProducts] = useState([]);
 
-    const navigate = useNavigate();
+    const findProducts = useCallback(async () => {
+        try{
+            const response = await api.get("/products")
+            setProducts(response.data);
+        }catch{
+            Swal.fire({
+                title: "Ops! ocorreu um erro.",
+                text: "Parece que a conexão com o servidor falhou.",
+                icon: "error"
+            })
+        }
+    }, [setProducts])
 
-    
-
-
-    useEffect(()=>{
-       //setCategorias(apiCall("/categorias"))
-        //let callResponse;
-
-        //if(categoryParam === undefined)
-        //    callResponse = apiCall("all")
-        //else
-        //    callResponse = apiCall(`produtos/${categoryParam}`)
-
-        //if(callResponse.status)
-           // navigate("*")
-        //else
-           // setProdutos(callResponse)
-
-
-    },[categoryParam,navigate])
-    
-
+    useEffect(  findProducts, [findProducts])
 
     return(
         <Container >
             <ProductFilter categoryArray/>
-            <CardGroup className="list-unstyled">{
-                products.map(({id, title, price, description, image, categories})=>{
+            <CardGroup className="list-unstyled">
+                {products.map(({id, title, price, description, imageUrl, category})=>{
                     return (
                         <li className="grid-item" key={id} >
-                        <ProductCard id={id} title={title}  description={description} image={image} categories={categories} price={price} />
+                        <ProductCard id={id} title={title}  description={description} image={imageUrl} categories={category.name} price={price} />
                         </li>
                     )
                 })

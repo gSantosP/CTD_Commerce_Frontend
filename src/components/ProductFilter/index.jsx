@@ -14,22 +14,22 @@ export default function ProductFilter(categoryArray){
    
     return(
         <Dropdown>
-                <Dropdown.Toggle className="filtro-produto" id="dropdown-basic">
-                    {categoryParam === undefined ? "Todos Produtos" : option}
-                </Dropdown.Toggle>
+            <Dropdown.Toggle className="filtro-produto" id="dropdown-basic">
+                {categoryParam === undefined ? "Todos Produtos" : option}
+            </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                    <Dropdown.Item className="filtro-item" onClick={() => navigate("/products")}>Todos Produtos</Dropdown.Item>
-                    {
-                        categories.map(({ id, name }) => {
-                            return (
-                                <li key={id} onClick={() => navigate(`/products/${name}`)}>
-                                    <Dropdown.Item className="filtro-item" key={id} onClick={() => setOption(name)}>{name}</Dropdown.Item>
-                                </li>
-                            )
-                        })
-                    }
-                </Dropdown.Menu>
-            </Dropdown>
+            <Dropdown.Menu>
+                <Dropdown.Item className="filtro-item" onClick={() => navigate("/products")}>Todos Produtos</Dropdown.Item>
+                {
+                    categories.map(({ id, name }) => {
+                        return (
+                            <li key={id} onClick={() => navigate(`/products/${name}`)}>
+                                <Dropdown.Item className="filtro-item" key={id} onClick={() => setOption(name)}>{name}</Dropdown.Item>
+                            </li>
+                        )
+                    })
+                }
+            </Dropdown.Menu>
+        </Dropdown>
     )
 }
