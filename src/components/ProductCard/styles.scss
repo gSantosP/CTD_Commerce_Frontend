@@ -9,13 +9,18 @@
        max-width: 100%;
     }
 
+    .card-title.h5{
+        height: 50px;
+    }
+
     .btn{
         width: 100%;
     }
 
-    .price{
-        color: $orange;
+    .card-text{
+        height: 1.2rem;
         font-size: 1.2rem;
+        color: $orange;
         font-weight: 600;
     }
 }

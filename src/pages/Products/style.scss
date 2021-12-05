@@ -1,0 +1,31 @@
+@import '../../style/variables.scss';
+
+.products-content{
+
+    padding: 24px 0;
+
+    .category-btn{
+        margin: 0 1px;
+        width: 98px;
+        height: 90px;
+        padding: 12px 6px;
+        text-align: center;
+        border-radius: 0;
+        background-color: #0A162925;
+        color: $deep-blue;
+        font-weight: bold;
+
+        &.active{
+            background-color: $deep-blue;
+            color: $light-gray;
+        }
+    }
+
+    .category-btn:first-of-type{
+        border-radius: 8px 0 0 8px;
+    }
+
+    .category-btn:last-of-type{
+        border-radius: 0 8px 8px 0 ;
+    }
+}
