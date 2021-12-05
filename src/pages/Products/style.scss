@@ -18,6 +18,10 @@
         &.active{
             background-color: $deep-blue;
             color: $light-gray;
+
+            .btn:focus{
+                box-shadow: none !important;
+            }
         }
     }
 
