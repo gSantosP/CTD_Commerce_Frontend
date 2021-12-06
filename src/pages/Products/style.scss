@@ -1,35 +1,41 @@
 @import '../../style/variables.scss';
 
 .products-content{
-
     padding: 24px 0;
 
+    .category-filter-group{
+        border: 1px solid $light-gray;
+        border-radius: 6px;
+    }
+
     .category-btn{
-        margin: 0 1px;
+        margin: 2px;
         width: 98px;
-        height: 90px;
-        padding: 12px 6px;
+        height: 72px;
+        padding: 6px;
         text-align: center;
         border-radius: 0;
         background-color: $light-blue;
         color: $deep-blue;
+        font-size: 0.9rem;
         font-weight: bold;
+        border: none;
+        border-radius: 6px;
 
         &.active{
             background-color: $deep-blue;
             color: $light-gray;
-
-            .btn:focus{
-                box-shadow: none !important;
-            }
         }
     }
 
-    .category-btn:first-of-type{
-        border-radius: 8px 0 0 8px;
+    @media screen {
+        
     }
+}
 
-    .category-btn:last-of-type{
-        border-radius: 0 8px 8px 0 ;
+@media (max-width: 550px) {
+    .category-filter-group{
+        font-size: 1rem;
+        transform: scale(0.7);
     }
 }
