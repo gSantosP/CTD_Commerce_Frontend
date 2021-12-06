@@ -13,7 +13,8 @@ export default function AboutUs() {
             <MainTittle>Colaboradores</MainTittle>
             <CardGroup className="cards-group list-unstyled">
                 {contributors.map(({ img, name, linkedin, github }) => {
-                    return (<li className="grid-item">
+                    return (
+                    <li className="grid-item">
                         <ContributorsCards
                             img={img}
                             name={name}

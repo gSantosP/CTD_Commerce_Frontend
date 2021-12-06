@@ -18,7 +18,6 @@ export default function RouterList() {
           <Route path="/products" element={ <Products/> } />
           <Route path="/products/:categoryParam" element={ <Products/> } />
           <Route path="/products/productPage/:productId" element={ <ProductDetails/> } />
-
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </main>

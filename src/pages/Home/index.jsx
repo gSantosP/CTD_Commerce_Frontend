@@ -1,6 +1,6 @@
 import "./styles.scss";
 import { useState, useCallback, useEffect } from "react";
-import api from '../../services/api';
+import restClient from '../../services/restClient';
 import { Carousel, Container } from "react-bootstrap";
 import bannerImg1 from '../../assets/img/banner/banner-1.png';
 import bannerImg2 from '../../assets/img/banner/banner-2.png';
@@ -16,10 +16,10 @@ export default function Home() {
 
     const findProducts = useCallback(async () => {
         try {
-            let response = await api.get("/products/page/0/limit/3");
+            let response = await restClient.get("/products/page/0/limit/3");
             setFirstProducts(response.data.content);
 
-            response = await api.get("/products/page/1/limit/3");
+            response = await restClient.get("/products/page/1/limit/3");
             setLastProducts(response.data.content);
         } catch {
             Swal.fire({
@@ -63,7 +63,7 @@ export default function Home() {
                 <Carousel>
                     <Carousel.Item>
                         <CardGroup className="list-unstyled">
-                            {firstProducts.map( ({id, title, imageUrl, price}) => {
+                            {firstProducts.map(({id, title, imageUrl, price}) => {
                                 return <li className="grid-item" key={id} >
                                     <ProductCard 
                                         id={id}
@@ -76,13 +76,14 @@ export default function Home() {
                     </Carousel.Item>
                     <Carousel.Item>
                         <CardGroup className="list-unstyled">
-                            {lastProducts.map( ({id, title, imageUrl, price}) => {
+                            {lastProducts.map(({id, title, imageUrl, price}) => {
                                 return <li className="grid-item" key={id} >
                                     <ProductCard 
                                         id={id}
                                         title={title}
                                         image={imageUrl}
-                                        price={price} />
+                                        price={price}
+                                    />
                                 </li>
                             })}
                         </CardGroup>

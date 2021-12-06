@@ -9,12 +9,10 @@
 }
 
 #root{
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
-}
-
-#main-content{
-  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
