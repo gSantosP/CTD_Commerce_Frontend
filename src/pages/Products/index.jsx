@@ -53,8 +53,8 @@ export default function Products() {
                         Eletrônico
                     </button>
                     <button
-                        className={`category-btn ${category === 2 ? "active" : ""}`}
-                        onClick={() => handlerCategory(2)}>
+                        className={`category-btn ${category === 4 ? "active" : ""}`}
+                        onClick={() => handlerCategory(4)}>
                         Roupas Femininas
                     </button>
                     <button
@@ -63,8 +63,8 @@ export default function Products() {
                         Roupas Masculinas
                     </button>
                     <button
-                        className={`category-btn ${category === 4 ? "active" : ""}`}
-                        onClick={() => handlerCategory(4)}>
+                        className={`category-btn ${category === 2 ? "active" : ""}`}
+                        onClick={() => handlerCategory(2)}>
                         Joalheria
                     </button>
                 </div>
