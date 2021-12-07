@@ -8,6 +8,7 @@ import bannerImg3 from '../../assets/img/banner/banner-3.png';
 import { CardGroup } from 'react-bootstrap';
 import ProductCard from '../../components/ProductCard';
 import Swal from "sweetalert2";
+import {Helmet} from "react-helmet";
 
 export default function Home() {
 
@@ -32,64 +33,72 @@ export default function Home() {
 
     useEffect(findProducts, [findProducts])
 
+
     return (
-        <div className="home-page-content">
-            <div className="banner">
-                <Carousel>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={bannerImg1}
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={bannerImg2}
-                            alt="Second slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={bannerImg3}
-                            alt="Third slide"
-                        />
-                    </Carousel.Item>
-                </Carousel>
+        <>
+            <Helmet>
+                <title>CTD-Commerce | Home </title>
+            </Helmet>
+
+            <div className="home-page-content">
+
+                <div className="banner">
+                    <Carousel>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={bannerImg1}
+                                alt="First slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={bannerImg2}
+                                alt="Second slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={bannerImg3}
+                                alt="Third slide"
+                            />
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
+                <Container className="carousel-products">
+                    <Carousel>
+                        <Carousel.Item>
+                            <CardGroup className="list-unstyled">
+                                {firstProducts.map(({ id, title, imageUrl, price }) => {
+                                    return <li className="grid-item" key={id} >
+                                        <ProductCard
+                                            id={id}
+                                            title={title}
+                                            image={imageUrl}
+                                            price={price} />
+                                    </li>
+                                })}
+                            </CardGroup>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <CardGroup className="list-unstyled">
+                                {lastProducts.map(({ id, title, imageUrl, price }) => {
+                                    return <li className="grid-item" key={id} >
+                                        <ProductCard
+                                            id={id}
+                                            title={title}
+                                            image={imageUrl}
+                                            price={price}
+                                        />
+                                    </li>
+                                })}
+                            </CardGroup>
+                        </Carousel.Item>
+                    </Carousel>
+                </Container>
             </div>
-            <Container className="carousel-products">
-                <Carousel>
-                    <Carousel.Item>
-                        <CardGroup className="list-unstyled">
-                            {firstProducts.map(({id, title, imageUrl, price}) => {
-                                return <li className="grid-item" key={id} >
-                                    <ProductCard 
-                                        id={id}
-                                        title={title}
-                                        image={imageUrl}
-                                        price={price} />
-                                </li>
-                            })}
-                        </CardGroup>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <CardGroup className="list-unstyled">
-                            {lastProducts.map(({id, title, imageUrl, price}) => {
-                                return <li className="grid-item" key={id} >
-                                    <ProductCard 
-                                        id={id}
-                                        title={title}
-                                        image={imageUrl}
-                                        price={price}
-                                    />
-                                </li>
-                            })}
-                        </CardGroup>
-                    </Carousel.Item>
-                </Carousel>
-            </Container>
-        </div>
+        </>
     )
 }
