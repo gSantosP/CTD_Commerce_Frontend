@@ -6,4 +6,4 @@ Paleta de cores:
 #7B2700 - Tree
 #EEE - light_gray
 
-Figma: https://www.figma.com/file/rxmSGcKIjdholB7gpBEakL/Untitled?node-id=4%3A491
+Figma: https://www.figma.com/file/rxmSGcKIjdholB7gpBEakL/CTD---Commerce?node-id=0%3A1

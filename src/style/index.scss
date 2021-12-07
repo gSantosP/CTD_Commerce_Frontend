@@ -40,15 +40,19 @@ a{
   }
 }
 
-.btn-primary{
+#bootstrap-override .btn.btn-primary{
   border-radius: 24px;
   background-color: $deep-blue;
   border: none;
   box-shadow: none;
 
   &:hover{
-    background-color: $deep-blue;
+    background-color: $deep-blue !important;
     opacity: .9;
+  }
+
+  &:active{
+    box-shadow: none ip !important;
   }
 }
 

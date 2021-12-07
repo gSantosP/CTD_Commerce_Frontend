@@ -14,7 +14,7 @@ export default function ProductCard({ id, title, price, image }) {
             <Card.Body>
                 <Card.Title> {title} </Card.Title>
                 <Card.Text>{`R$ ${price}`}</Card.Text>
-                <Button variant="primary" onClick={()=> navigate(`/products/productPage/${id}`)}> Comprar </Button>
+                <Button variant="primary" onClick={()=> navigate(`/product-details/${id}`)}> Comprar </Button>
             </Card.Body>
         </Card>
     )

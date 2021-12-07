@@ -1,17 +1,21 @@
 @import '../../style/variables.scss';
 
+#product-datails-content{
+    padding-top: 60px;
 
-.produto-box-holder{
-    background-color: #EEEEEE;
-        height:25rem;
+    .sec-tittle{
+        text-align: left;
+        margin: 24px 0;
+    }
 
-}
+    .price{
+        color: $orange;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
 
-.img-holder{
-    height:25rem;
     img{
-        height:25rem;
-        width: fit-content;
+        width: 800px;
+        max-width: 100%;
     }
 }
-
