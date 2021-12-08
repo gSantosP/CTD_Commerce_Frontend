@@ -11,12 +11,13 @@ export default function cartReducer(state, action){
             return state;
 
         case 'REMOVE_PRODUCT':
-            state.forEach((product, index) => {
-                if(product.id === action.payload.id){
-                    state.splice(index, 1);
+            const newState = [];
+            state.forEach((product) => {
+                if(product.id !== action.payload.id){
+                    newState.push(product);
                 }
             });
-            return state;
+            return newState;
 
         case 'CLEAR':
             state = [];

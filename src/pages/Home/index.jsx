@@ -8,7 +8,7 @@ import bannerImg3 from '../../assets/img/banner/banner-3.png';
 import { CardGroup } from 'react-bootstrap';
 import ProductCard from '../../components/ProductCard';
 import Swal from "sweetalert2";
-import {Helmet} from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Home() {
 
@@ -36,12 +36,13 @@ export default function Home() {
 
     return (
         <>
-            <Helmet>
-                <title>CTD-Commerce | Home </title>
-            </Helmet>
-
+            <HelmetProvider>
+                <Helmet>
+                    <title>CTD-Commerce | Home</title>
+                    <link rel="canonical" href="https://www.tacobell.com/" />
+                </Helmet>
+            </HelmetProvider>
             <div className="home-page-content">
-
                 <div className="banner">
                     <Carousel>
                         <Carousel.Item>

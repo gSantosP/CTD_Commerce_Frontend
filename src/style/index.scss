@@ -9,8 +9,7 @@
 }
 
 #root{
-  min-height: 100%;
-  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -19,6 +18,10 @@ body {
   font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#main-content{
+  flex-grow: 1;
 }
 
 a{
@@ -45,6 +48,7 @@ a{
   background-color: $deep-blue;
   border: none;
   box-shadow: none;
+  font-weight: bold;
 
   &:hover{
     background-color: $deep-blue;
@@ -54,6 +58,10 @@ a{
   &:active{
     box-shadow: none;
   }
+}
+
+#bootstrap-override .bkg-none{
+  background: none !important;
 }
 
 .swal2-container{

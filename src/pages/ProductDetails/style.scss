@@ -1,27 +1,42 @@
 @import '../../style/variables.scss';
 
 #product-datails-content{
-    padding-top: 60px;
+    padding-top: 24px;
 
     .sec-tittle{
         text-align: left;
         margin: 24px 0;
     }
 
+    p{
+        margin: 0;
+    }
+
     .price{
+        margin: 14px 0 0 0;
         color: $orange;
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     img{
-        width: 800px;
+        border: 2px solid $light-blue;
+        border-radius: 12px;
+        max-height: 540px;
         max-width: 100%;
     }
 
+    .description{
+        font-size: 1.1rem;
+    }
+
+    .details.freight{
+        color: rgb(0, 104, 73);
+    }
+
     .btn.btn-primary{
-        font-weight: bold;
         min-width: 180px;
+        margin-top: 12px;
 
         &.finalize{
             background-color: $light-blue;

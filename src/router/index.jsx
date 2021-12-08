@@ -7,6 +7,7 @@ import ProductDetails from '../pages/ProductDetails';
 import NotFound from '../pages/NotFound'
 import AboutUs from '../pages/AboutUs';
 import CartContextProvider from '../context/CartContest';
+import Cart from '../pages/Cart';
 
 export default function RouterList() {
   return (
@@ -18,6 +19,7 @@ export default function RouterList() {
             <Route path="/" element={ <Home/> } />
             <Route path="/about_us" element={ <AboutUs/> } />
             <Route path="/products" element={ <Products/> } />
+            <Route path="/cart" element={ <Cart/> } />
             <Route path="/product-details/:productId" element={ <ProductDetails/> } />
             <Route path="*" element={<NotFound/>}/>
           </Routes>

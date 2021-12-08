@@ -2,23 +2,25 @@ import './style.scss';
 import ContributorsCards from "../../components/ContributorsCards";
 import { CardGroup, Container } from "react-bootstrap";
 import MainTittle from '../../components/Tipografy/MainTittle';
-import { Helmet } from 'react-helmet';
 import contributors from '../../temp/contributors';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import SecTittle from '../../components/Tipografy/SecTittle';
 
 export default function AboutUs() {
     return (
         <>
-            <Helmet>
-                <title>CTD-Commerce | Sobre nós</title>
-            </Helmet>
-
+            <HelmetProvider>
+                <Helmet>
+                    <title>CTD-Commerce | Sobre nós</title>
+                    <link rel="canonical" href="https://www.tacobell.com/" />
+                </Helmet>
+            </HelmetProvider>
             <Container id="contributors">
                 <MainTittle>Colaboradores</MainTittle>
                 <CardGroup className="cards-group list-unstyled">
-                    {contributors.map(({ img, name, linkedin, github }) => {
+                    {contributors.map(({ img, name, linkedin, github }, index) => {
                         return (
-                            <li className="grid-item">
+                            <li key={index} className="grid-item">
                                 <ContributorsCards
                                     img={img}
                                     name={name}

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import NotFoundIlustration from '../../assets/svg/ilustrations/exception-ilustration.svg'
 import MainTittle from "../../components/Tipografy/MainTittle"
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function NotFound() {
 
@@ -25,9 +25,12 @@ export default function NotFound() {
 
     return (
         <>
-            <Helmet>
-                <title>CTD-Commerce | Not found</title>
-            </Helmet>
+            <HelmetProvider>
+                <Helmet>
+                    <title>Not Found</title>
+                    <link rel="canonical" href="https://www.tacobell.com/" />
+                </Helmet>
+            </HelmetProvider>
             <div id="not-found-content" className="d-flex align-items-center flex-column">
                 <img src={NotFoundIlustration} alt="not found ilustration" />
                 <MainTittle>Ops! Não encontramos o que você está procurando.</MainTittle>

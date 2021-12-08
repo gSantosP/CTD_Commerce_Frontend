@@ -5,6 +5,7 @@ import restClient from '../../services/restClient';
 import { useCallback, useState, useEffect, useContext} from "react"
 import Swal from "sweetalert2"; 
 import SecTittle from "../../components/Tipografy/SecTittle";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { CartContext } from "../../context/CartContest";
 
 export default function ProductDetails() {
@@ -13,16 +14,19 @@ export default function ProductDetails() {
     const { productId } = useParams()
     const [product, setProduct] = useState({});
     const { addProduct, productsInCart } = useContext(CartContext);
-    let cartIncludes;
+    const [cartIncludes, setCartIncludes] = useState(false);
 
-    productsInCart.forEach( p => {
-        cartIncludes = p.id === product.id;
-    });
+    useEffect(() => {
+        productsInCart.forEach( p => {
+            setCartIncludes(p.id === product.id);
+        });
+    }, [productsInCart, product])
 
     const getProduct = useCallback( async () => {
         const response = await restClient.get(`/products/${productId}`)
         const product = response.data;
         setProduct(product);
+        
     }, [setProduct, productId]);
 
     useEffect(() => {
@@ -38,29 +42,38 @@ export default function ProductDetails() {
     }, [getProduct ])
 
     return (
-        <Container id="product-datails-content">
-            <Row xs={1} sm={2} className="d-flex flex-wrap">
-                <Col>
-                    <img src={product.imageUrl} alt={`${product.title}`}></img>
-                </Col>
-                <Col className="d-flex flex-column justify-content-center">
-                    <SecTittle> {product.title} </SecTittle>
-                    <Card.Text>
-                        <span>{product.description}</span>
-                        <br />
-                        <span className="price">{`R$ ${product.price}`}</span>
-                    </Card.Text>
-                    {cartIncludes ? (
-                        <Button className="finalize" variant="primary" onClick={() => navigate('/cart')}>
-                            Finalizar Pedido
-                        </Button>
-                    ) : (
-                        <Button variant="primary" onClick={() => addProduct(product)}>
-                            Adicionar ao carrinho
-                        </Button>
-                    )}
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <HelmetProvider>
+                <Helmet>
+                    <title>CTD-Commerce | {`${product.title}`}</title>
+                    <link rel="canonical" href="https://www.tacobell.com/" />
+                </Helmet>
+            </HelmetProvider>
+            <Container id="product-datails-content">
+                <Row xs={1} sm={2} className="d-flex flex-wrap">
+                    <Col>
+                        <img src={product.imageUrl} alt={`${product.title}`}></img>
+                    </Col>
+                    <Col className="d-flex flex-column justify-content-center align-items-start">
+                        <SecTittle> {product.title} </SecTittle>
+                        <Card.Text>
+                            <p className="description">{product.description}</p>
+                            <p className="details freight">Frete gratis nas compras acima de R$50,00</p>
+                            <p className="price">{`R$ ${product.price}`}</p>
+                            <p className="details">Parcele em até <strong>12X sem juros</strong> </p>
+                        </Card.Text>
+                        {cartIncludes ? (
+                            <Button className="finalize" variant="primary" onClick={() => navigate('/cart')}>
+                                Finalizar Pedido
+                            </Button>
+                        ) : (
+                            <Button variant="primary" onClick={() => addProduct(product)}>
+                                Adicionar ao carrinho
+                            </Button>
+                        )}
+                    </Col>
+                </Row>
+            </Container>
+        </>
     )
 }

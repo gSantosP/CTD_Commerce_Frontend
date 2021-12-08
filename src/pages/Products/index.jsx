@@ -4,7 +4,7 @@ import ProductCard from '../../components/ProductCard'
 import restClient from '../../services/restClient';
 import { useCallback, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Products() {
 
@@ -53,9 +53,12 @@ export default function Products() {
 
     return (
         <>
-            <Helmet>
-                <title>CTD-Commerce | Produtos</title>
-            </Helmet>
+            <HelmetProvider>
+                <Helmet>
+                    <title>CTD-Commerce | Produtos</title>
+                    <link rel="canonical" href="https://www.tacobell.com/" />
+                </Helmet>
+            </HelmetProvider>
             <Container className="products-content">
                 {categories != null &&
                     <div className="d-flex justify-content-center">
@@ -77,17 +80,17 @@ export default function Products() {
                     {products.map(({ id, title, price, imageUrl }) => {
                         return (
                             <li className="grid-item" key={id} >
-                                <ProductCard id={id}
+                                <ProductCard
+                                    id={id}
                                     title={title}
                                     image={imageUrl}
                                     price={price}
                                 />
                             </li>
                         )
-                    })
-                    }</CardGroup>
-
+                    })}
+                </CardGroup>
             </Container>
-            </>
-            )
+        </>
+    )
 }
