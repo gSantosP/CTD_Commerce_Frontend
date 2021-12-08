@@ -55,7 +55,7 @@ export default function Cart() {
                                         </td>
                                         <td>
                                             <div className="product-content-other">
-                                                {price}
+                                                {price.toFixed(2)}
                                             </div>
                                         </td>
                                         <td className="col-3" >
@@ -69,7 +69,7 @@ export default function Cart() {
                                         </td>
                                         <td >
                                             <div className="product-content-other">
-                                                {price}
+                                                {price.toFixed(2)}
                                             </div>
                                         </td>
                                     </tr>

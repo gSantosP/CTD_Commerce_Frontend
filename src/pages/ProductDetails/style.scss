@@ -8,7 +8,7 @@
         margin: 24px 0;
     }
 
-    p{
+    span{
         margin: 0;
     }
 
@@ -31,7 +31,12 @@
     }
 
     .details.freight{
-        color: rgb(0, 104, 73);
+        color: rgb(2, 3, 3);
+    }
+
+    .quantity-selector{
+        font-size: 1.4rem;
+        margin-top: 0.25rem;
     }
 
     .btn.btn-primary{

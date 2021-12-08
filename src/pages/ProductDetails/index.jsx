@@ -57,10 +57,11 @@ export default function ProductDetails() {
                     <Col className="d-flex flex-column justify-content-center align-items-start">
                         <SecTittle> {product.title} </SecTittle>
                         <Card.Text>
-                            <p className="description">{product.description}</p>
-                            <p className="details freight">Frete gratis nas compras acima de R$50,00</p>
-                            <p className="price">{`R$ ${product.price}`}</p>
-                            <p className="details">Parcele em até <strong>12X sem juros</strong> </p>
+                            <span className="description">{product.description}</span> <br/>
+                            <span className="details freight"> Frete gratis nas compras acima de R$50,00</span> <br/>
+                            <span className="quantity-selector">Quantidade:</span> <br/>
+                            <span className="price"> {`R$ ${product.price && product.price.toFixed(2)}`}</span> <br/>
+                            <span className="details"> Parcele em até <strong>12X sem juros</strong> </span> <br/>
                         </Card.Text>
                         {cartIncludes ? (
                             <Button className="finalize" variant="primary" onClick={() => navigate('/cart')}>
