@@ -1,16 +1,22 @@
 export default function cartReducer(state, action){
     switch(action.type){
-        case 'ADD_PRODUCT':
-            const checkIfProductAlreadyExists = state.filter( product => {
-                return product.id === action.payload.id;
-            });
-
-            if(!checkIfProductAlreadyExists.length){
-                return [...state, action.payload]
+        case 'SAVE_PRODUCT':{
+            const newState = [];
+            if(state.length > 0){
+                state.forEach((product) => {
+                    if(product.id !== action.payload.id){
+                        newState.push(product);
+                    }else{
+                        newState.push(action.payload)
+                    }
+                });
+                return newState
             }
-            return state;
+            newState.push(action.payload)
+            return newState;
+        }
 
-        case 'REMOVE_PRODUCT':
+        case 'REMOVE_PRODUCT':{
             const newState = [];
             state.forEach((product) => {
                 if(product.id !== action.payload.id){
@@ -18,11 +24,12 @@ export default function cartReducer(state, action){
                 }
             });
             return newState;
+        }
 
-        case 'CLEAR':
+        case 'CLEAR':{
             state = [];
             return state;
-
+        }    
         default:
             return state;
     }

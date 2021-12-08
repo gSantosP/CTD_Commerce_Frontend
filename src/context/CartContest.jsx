@@ -9,7 +9,7 @@ export default function CartContextProvider({ children }) {
         return data ? JSON.parse(data) : [];
     });
 
-    const addProduct = (product) => dispatch({ type: 'ADD_PRODUCT', payload: product })
+    const saveProduct = (product) => dispatch({ type: 'SAVE_PRODUCT', payload: product })
 
     const removeProduct = (product) => dispatch({type: 'REMOVE_PRODUCT', payload: product})
 
@@ -20,7 +20,7 @@ export default function CartContextProvider({ children }) {
     }, [productsInCart]);
 
     return (
-        <CartContext.Provider value={{ productsInCart, addProduct, removeProduct, clearProducts }}>
+        <CartContext.Provider value={{ productsInCart, saveProduct, removeProduct, clearProducts }}>
           {children}
         </CartContext.Provider>
     );
