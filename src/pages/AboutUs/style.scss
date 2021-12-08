@@ -10,4 +10,13 @@
             font-size: 1.2rem;
         }
     }
+    .cards-group.list-unstyled.card-group{
+        @media screen and (max-width: 770px){
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 771px) and (max-width: 992px){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
 }
