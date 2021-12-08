@@ -77,7 +77,7 @@ export default function Cart() {
                             })}
                         </tbody>
                     </Table>
-                    <div className="cart-button-box">
+                    <div className="cart-button-box d-flex align-itens-center justify-content-between">
                         <Button  className="bkg-none clear-cart" onClick={() => clearProducts()}>Limpar Carrinho</Button>
                         <Button variant="primary">Finalizar Compra</Button>
                     </div>

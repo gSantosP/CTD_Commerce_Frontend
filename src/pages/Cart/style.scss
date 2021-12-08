@@ -1,74 +1,72 @@
 @import '../../style/variables.scss';
 
-.cart-content.container{
-    
-    .carrinho-placeholder{
-        margin-top: 4rem;
-        text-align: center;
-    
-        .btn.send-to-back{
-            margin-top: 24px;
+.carrinho-placeholder{
+    margin-top: 4rem;
+    text-align: center;
+
+    .btn.send-to-back{
+        margin-top: 24px;
+    }
+}
+
+#bootstrap-override .carrinho-holder{
+    margin-top: 4rem;
+    margin-bottom: 11rem;
+
+    .tabela-cart{
+        margin-top: 2rem;
+    }
+
+    td{
+        height:15rem;
+        
+    }
+
+    .product-content-all{
+        display:flex;
+        gap: 5rem;
+        align-items: center;
+        height: 100%;
+        width:450px;
+
+    }
+
+    .cart-img-holder{
+
+        img {
+            height:12rem;
+            width:8rem;
+            object-fit: contain;
         }
     }
 
-    #bootstrap-override .carrinho-holder{
-        margin-top: 4rem;
-        margin-bottom: 11rem;
+    .product-content{
+        display:flex;
+        gap: 2rem;
+        align-items: center;
+        width:320px;
+    }
 
-        .tabela-cart{
-            margin-top: 2rem;
+    .product-content-other{
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-button-box{
+        display: flex;
+        margin-top: 2rem;
+        justify-content: space-between;
+        align-items: baseline;
+
+        button{
+            width: 14rem;
         }
-
-        td{
-            height:15rem;
-            
+        .clear-cart{
+            color:#fd7373;
+            font-size: 1.25rem;
         }
-
-        .product-content-all{
-            display:flex;
-            gap: 5rem;
-            align-items: center;
-            height: 100%;
-            width:450px;
-
-        }
-        .product-content{
-            display:flex;
-            gap: 2rem;
-            align-items: center;
-            width:320px;
-
-            .cart-img-holder{
-
-                img {
-                    height:12rem;
-                    width:8rem;
-                    object-fit: contain;
-                }
-            }
-        }
-
-        .product-content-other{
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cart-button-box{
-            display: flex;
-            margin-top: 2rem;
-            justify-content: space-between;
-            align-items: baseline;
-
-            button{
-                width: 14rem;
-            }
-            .clear-cart{
-                color:#fd7373;
-                font-size: 1.25rem;
-            }
-        }
-    }    
-}
+    }
+}    
