@@ -18,4 +18,14 @@
         width: 800px;
         max-width: 100%;
     }
+
+    .btn.btn-primary{
+        font-weight: bold;
+        min-width: 180px;
+
+        &.finalize{
+            background-color: $light-blue;
+            color: $deep-blue;
+        }
+    }
 }

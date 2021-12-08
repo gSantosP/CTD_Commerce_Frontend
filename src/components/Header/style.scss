@@ -20,5 +20,22 @@
         &:hover{
             background-color: $light-blue;
         }
+
+        &:last-child{
+            position: relative;
+
+            span{
+                position: absolute;
+                top: 0;
+                right: 0;
+                border: 1px solid $deep-blue;
+                background-color: $light-gray;
+                color: $deep-blue;
+                font-size: .7rem;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+            }
+        }
     }
 }

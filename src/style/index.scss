@@ -47,12 +47,12 @@ a{
   box-shadow: none;
 
   &:hover{
-    background-color: $deep-blue !important;
+    background-color: $deep-blue;
     opacity: .9;
   }
 
   &:active{
-    box-shadow: none ip !important;
+    box-shadow: none;
   }
 }
 

@@ -4,7 +4,7 @@ import cartReducer from '../reducer/cartReducer';
 export const CartContext = createContext();
 
 export default function CartContextProvider({ children }) {
-    const [products, dispatch] = useReducer(cartReducer, [], () => {
+    const [productsInCart, dispatch] = useReducer(cartReducer, [], () => {
         const data = localStorage.getItem('cartProducts');
         return data ? JSON.parse(data) : [];
     });
@@ -14,11 +14,11 @@ export default function CartContextProvider({ children }) {
     const removeProduct = (product) => dispatch({type: 'REMOVE_PRODUCT', payload: product})
 
     useEffect(() => {
-        localStorage.setItem('cartProducts', JSON.stringify(products));
-    }, [products]);
+        localStorage.setItem('cartProducts', JSON.stringify(productsInCart));
+    }, [productsInCart]);
 
     return (
-        <CartContext.Provider value={{ products, addProduct, removeProduct }}>
+        <CartContext.Provider value={{ productsInCart, addProduct, removeProduct }}>
           {children}
         </CartContext.Provider>
     );
