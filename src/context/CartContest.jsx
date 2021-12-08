@@ -13,12 +13,14 @@ export default function CartContextProvider({ children }) {
 
     const removeProduct = (product) => dispatch({type: 'REMOVE_PRODUCT', payload: product})
 
+    const clearProducts = (product) => dispatch({type: 'CLEAR', payload: {}})
+
     useEffect(() => {
         localStorage.setItem('cartProducts', JSON.stringify(productsInCart));
     }, [productsInCart]);
 
     return (
-        <CartContext.Provider value={{ productsInCart, addProduct, removeProduct }}>
+        <CartContext.Provider value={{ productsInCart, addProduct, removeProduct, clearProducts }}>
           {children}
         </CartContext.Provider>
     );
