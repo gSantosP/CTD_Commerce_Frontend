@@ -2,7 +2,7 @@ import './style.scss';
 import ContributorsCards from "../../components/ContributorsCards";
 import { CardGroup, Container } from "react-bootstrap";
 import MainTittle from '../../components/Tipografy/MainTittle';
-import contributors from '../../temp/contributors';
+import contributors from '../../assets/data/contributors';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import SecTittle from '../../components/Tipografy/SecTittle';
 
