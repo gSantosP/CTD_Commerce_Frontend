@@ -35,5 +35,16 @@
             }
         }
     }
+    .list-unstyled.card-group{
+        @media (max-width: 768px) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width:769px) and ( max-width: 1000px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
 }
 
