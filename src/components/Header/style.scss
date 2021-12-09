@@ -47,11 +47,15 @@
 
         &.is-visible{
             display: block;
+            
+            @media (min-width: 480px) {
+                display: none;
+            }
         }
-
+        
         @keyframes toggleDropDown {
             to{
-                bottom: -160px;
+                bottom: -120px;
             }     
         }
     }
