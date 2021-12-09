@@ -40,7 +40,7 @@ export default function CartMobile() {
             <div className="mobile-cards-holder ">
                 <div className="mobile-main-title"><h3>Seu Carrinho</h3></div>
                 {productsInCart.map((product, index) => {
-                    const { id, title, price, imageUrl, quantity } = product;
+                    const { id, title, price, imageUrl, category, quantity } = product;
                     return (
                         <div className="mobile-card " key={id}>
                             <div className="mobile-cart-content">
@@ -59,6 +59,9 @@ export default function CartMobile() {
                                                 <button className="bkg-none" onClick={() => addQuantity(product)}>  <img src={arrowUp} alt="seta para cima" /> </button>
                                             </div>
                                         </div>
+                                        <div className="category-box">
+                                            Categoria: {category.name}
+                                         </div>   
                                     </div>
                                     <div className="bottom-box">
                                         <div className="final-value-holder">

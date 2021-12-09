@@ -50,11 +50,11 @@
 
                 .middle-box{
                     display: flex;
-
+                    flex-direction: column;
+                    font-size: 1.13rem;
                     .middle-box-main{
                         width: 100%;
                         display: flex;
-                        font-size: 1.13rem;
                     }
 
                     .middle-box-items{
