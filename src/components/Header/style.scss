@@ -1,10 +1,60 @@
 @import '../../style/variables.scss';
 
-#default-header{
+#bootstrap-override #default-header{
     position: sticky;
     top: 0;
     z-index: 10;
     background-color: $light-gray;
+
+    .navigate-bar{
+        position: relative;
+
+        @media (max-width: 480px) {
+            display: none;
+        }
+    }
+
+    .toggle-drop-down-menu{
+        background-color: $light-blue;
+        border-radius: 8px;
+        padding: 10px;
+        border: none;
+        display: none;
+
+        @media (max-width: 480px) {
+            display: inline;
+        }
+    }
+    
+    .dropdown-menu{
+        padding: 8px;
+        position: absolute;
+        bottom: 100%;
+        right: 12px;
+        animation: toggleDropDown .3s ease-out both;
+
+        .dropdown-item{
+            font-weight: bold;
+            display: flex;
+            padding: 6px;
+            justify-content: space-between;
+
+            &:hover{
+                background-color: $deep-blue;
+                color: $light-gray;
+            }
+        }
+
+        &.is-visible{
+            display: block;
+        }
+
+        @keyframes toggleDropDown {
+            to{
+                bottom: -160px;
+            }     
+        }
+    }
 
     .logo:hover{
         opacity: $hover-opacity;
@@ -14,8 +64,13 @@
         font-weight: bold;
         color: $deep-blue;
         border-radius: 20px;
-        padding: 8px 16px;
+        padding: 8px 10px;
+        margin: 0 3px;
         color: inherit;
+
+        &.current-page{
+            background-color: $light-blue;
+        }
 
         &:hover{
             background-color: $light-blue;
@@ -24,10 +79,10 @@
         &:last-child{
             position: relative;
 
-            span{
+            .cart-count{
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: -3px;
+                right: -3px;
                 border: 1px solid $deep-blue;
                 background-color: $light-gray;
                 color: $deep-blue;
@@ -35,6 +90,8 @@
                 width: 18px;
                 height: 18px;
                 border-radius: 50%;
+                text-align: center;
+                padding: 1px 0;
             }
         }
     }

@@ -1,5 +1,5 @@
 import "./style.scss"
-import { Container, Col, Row, Button } from 'react-bootstrap'
+import { Container, Col, Row, Button, CardGroup } from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router'
 import restClient from '../../services/restClient';
 import { useCallback, useState, useEffect, useContext } from "react"
@@ -7,8 +7,9 @@ import Swal from "sweetalert2";
 import SecTittle from "../../components/Tipografy/SecTittle";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { CartContext } from "../../context/CartContest";
-import arrowUp from "../../assets/svg/icons/Vector1.svg"
-import arrowDown from "../../assets/svg/icons/arrow-down.svg"
+import arrowUp from "../../assets/svg/icons/Vector1.svg";
+import arrowDown from "../../assets/svg/icons/arrow-down.svg";
+import ProductCard from "../../components/ProductCard";
 
 export default function ProductDetails() {
 
@@ -17,6 +18,7 @@ export default function ProductDetails() {
     const [product, setProduct] = useState({});
     const { saveProduct, productsInCart } = useContext(CartContext);
     const [cartIncludes, setCartIncludes] = useState(false);
+    const [currentCategory, setCurrentCategory] = useState(null);
     const [quantCounter, setQuantCounter] = useState(1)
 
     useEffect(() => {
@@ -25,28 +27,34 @@ export default function ProductDetails() {
         });
     }, [productsInCart, product])
 
-    
+
 
     const getProduct = useCallback(async () => {
-        const response = await restClient.get(`/products/${productId}`)
+        let response = await restClient.get(`/products/${productId}`)
         const product = response.data;
         setProduct(product);
 
+        if (product) {
+            response = await restClient.get(`/category/${product.category.id}`)
+            const category = response.data;
+            setCurrentCategory(category);
+        }
+
     }, [setProduct, productId]);
 
-    const handleSaveProduct = () =>{
+    const handleSaveProduct = () => {
         product.quantity = quantCounter
         saveProduct(product)
     }
 
 
     const addQuantity = () => {
-            setQuantCounter(quantCounter+1)
+        setQuantCounter(quantCounter + 1)
     }
 
     const decreaseQuantity = () => {
         if (quantCounter > 1) {
-            setQuantCounter(quantCounter-1)
+            setQuantCounter(quantCounter - 1)
         }
     }
 
@@ -82,9 +90,9 @@ export default function ProductDetails() {
                             <span className="description">{product.description}</span> <br />
                             <span className="freight"> Frete grátis nas compras acima de R$50,00</span> <br />
                             {!cartIncludes && (
-                                <div className="quanti-box">
+                                <div className="quantity-box">
                                     <span className="quantity-selector">Quantidade:</span>
-                                    <div className="quanti-items-holder">
+                                    <div className="quantity-items-holder">
                                         <button className="quantity-btn bkg-none" onClick={() => decreaseQuantity()}><img className="icon-img" alt="arrow-icon-down" src={arrowDown}></img></button>
                                         <span className="quantity-number">{quantCounter}</span>
                                         <button className="quantity-btn bkg-none" onClick={() => addQuantity()}><img className="icon-img" alt="arrow-icon-up" src={arrowUp}></img></button>
@@ -106,6 +114,26 @@ export default function ProductDetails() {
                     </Col>
                 </Row>
             </Container>
+            {currentCategory &&
+                <>
+                    <SecTittle>Outros produtos da mesma categoria</SecTittle>
+                    <CardGroup className="list-unstyled">
+                        {currentCategory.products.map(({ id, title, price, imageUrl }) => {
+                            return (
+                                <li className="grid-item" key={id} >
+                                    <ProductCard
+                                        id={id}
+                                        title={title}
+                                        image={imageUrl}
+                                        price={price}
+                                    />
+                                </li>
+                            )
+                        })}
+                    </CardGroup>
+
+                </>
+            }
         </>
     )
 }

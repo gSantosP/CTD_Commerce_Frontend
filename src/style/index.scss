@@ -36,13 +36,39 @@ a{
 
 .card-group{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 0;
 
   .grid-item{
     justify-self: center;
+    align-self: center;
+  }
+
+  @media (max-width:1199px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width:991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 670px) {
+      grid-template-columns: 1fr;
   }
 }
+
+.carousel{
+  position: relative;
+
+  #bootstrap-override .carousel-control-prev,
+  #bootstrap-override .carousel-control-next{
+    position: absolute;
+    top: calc(50% - 50px);
+    height: 100px;
+  }
+}
+
+
 
 #bootstrap-override .btn.btn-primary{
   border-radius: 24px;

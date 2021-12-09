@@ -1,9 +1,13 @@
 @import '../../style/variables.scss';
 
 .product-card{
-    width: 286px;
+    width: 250px;
     margin: 12px;
     box-shadow: $card-shadow;
+
+    @media (max-width: 767px) {
+        width: 250px;
+    }
 
     .img-container{
         width: 100%;

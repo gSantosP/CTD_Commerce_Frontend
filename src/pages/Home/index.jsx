@@ -12,16 +12,27 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default function Home() {
 
-    const [firstProducts, setFirstProducts] = useState([]);
-    const [lastProducts, setLastProducts] = useState([]);
+    const [productsPage1, setProductsPage1] = useState([]);
+    const [productsPage2, setProductsPage2] = useState([]);
+    const [productsPage3, setProductsPage3] = useState([]);
+    const [productsPage4, setProductsPage4] = useState([]);
+    const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+
+    window.addEventListener("resize", () => setWidthScreen(window.innerWidth));
 
     const findProducts = useCallback(async () => {
         try {
             let response = await restClient.get("/products/page/0/limit/3");
-            setFirstProducts(response.data.content);
+            setProductsPage1(response.data.content);
 
             response = await restClient.get("/products/page/1/limit/3");
-            setLastProducts(response.data.content);
+            setProductsPage2(response.data.content);
+
+            response = await restClient.get("/products/page/2/limit/3");
+            setProductsPage3(response.data.content);
+
+            response = await restClient.get("/products/page/3/limit/3");
+            setProductsPage4(response.data.content);
         } catch {
             Swal.fire({
                 title: "Ops! ocorreu um erro.",
@@ -29,9 +40,9 @@ export default function Home() {
                 icon: "error"
             })
         }
-    }, [setFirstProducts, setLastProducts])
+    }, [setProductsPage1, setProductsPage2])
 
-    useEffect(findProducts, [findProducts])
+    useEffect(() => findProducts(), [findProducts])
 
 
     return (
@@ -69,35 +80,108 @@ export default function Home() {
                     </Carousel>
                 </div>
                 <Container className="carousel-products">
-                    <Carousel>
-                        <Carousel.Item>
-                            <CardGroup className="list-unstyled">
-                                {firstProducts.map(({ id, title, imageUrl, price }) => {
-                                    return <li className="grid-item" key={id} >
-                                        <ProductCard
-                                            id={id}
-                                            title={title}
-                                            image={imageUrl}
-                                            price={price} />
-                                    </li>
-                                })}
-                            </CardGroup>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <CardGroup className="list-unstyled">
-                                {lastProducts.map(({ id, title, imageUrl, price }) => {
-                                    return <li className="grid-item" key={id} >
-                                        <ProductCard
-                                            id={id}
-                                            title={title}
-                                            image={imageUrl}
-                                            price={price}
-                                        />
-                                    </li>
-                                })}
-                            </CardGroup>
-                        </Carousel.Item>
-                    </Carousel>
+                    {widthScreen > 480 ? (
+                        <>
+                            <Carousel>
+                                <Carousel.Item>
+                                    <CardGroup className="list-unstyled home-caroucel">
+                                        {productsPage1.map(({ id, title, imageUrl, price }) => {
+                                            return (
+                                                <li className="grid-item" key={id} >
+                                                    <ProductCard
+                                                        id={id}
+                                                        title={title}
+                                                        image={imageUrl}
+                                                        price={price} />
+                                                </li>
+                                            )
+                                        })}
+                                    </CardGroup>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <CardGroup className="list-unstyled home-caroucel">
+                                        {productsPage2.map(({ id, title, imageUrl, price }) => {
+                                            return <li className="grid-item" key={id} >
+                                                <ProductCard
+                                                    id={id}
+                                                    title={title}
+                                                    image={imageUrl}
+                                                    price={price}
+                                                />
+                                            </li>
+                                        })}
+                                    </CardGroup>
+                                </Carousel.Item>
+                            </Carousel>
+                            <Carousel>
+                                <Carousel.Item>
+                                    <CardGroup className="list-unstyled home-caroucel">
+                                        {productsPage3.map(({ id, title, imageUrl, price }) => {
+                                            return <li className="grid-item" key={id} >
+                                                <ProductCard
+                                                    id={id}
+                                                    title={title}
+                                                    image={imageUrl}
+                                                    price={price} />
+                                            </li>
+                                        })}
+                                    </CardGroup>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <CardGroup className="list-unstyled home-caroucel">
+                                        {productsPage4.map(({ id, title, imageUrl, price }) => {
+                                            return <li className="grid-item" key={id} >
+                                                <ProductCard
+                                                    id={id}
+                                                    title={title}
+                                                    image={imageUrl}
+                                                    price={price}
+                                                />
+                                            </li>
+                                        })}
+                                    </CardGroup>
+                                </Carousel.Item>
+                            </Carousel>
+                        </>) : (
+                        <>
+                            <Carousel>
+                                {[...productsPage1, ...productsPage2]
+                                    .map(({ id, title, imageUrl, price }) => {
+                                        return (
+                                            <Carousel.Item key={id}>
+                                                <CardGroup className="list-unstyled home-caroucel">
+                                                    <li className="grid-item" >
+                                                        <ProductCard
+                                                            id={id}
+                                                            title={title}
+                                                            image={imageUrl}
+                                                            price={price} />
+                                                    </li>
+                                                </CardGroup>
+                                            </Carousel.Item>
+                                        )
+                                    })}
+                            </Carousel>
+                            <Carousel>
+                                {[...productsPage3, ...productsPage4]
+                                    .map(({ id, title, imageUrl, price }) => {
+                                        return (
+                                            <Carousel.Item key={id}>
+                                                <CardGroup className="list-unstyled home-caroucel">
+                                                    <li className="grid-item" >
+                                                        <ProductCard
+                                                            id={id}
+                                                            title={title}
+                                                            image={imageUrl}
+                                                            price={price} />
+                                                    </li>
+                                                </CardGroup>
+                                            </Carousel.Item>
+                                        )
+                                    })}
+                            </Carousel>
+                        </>
+                    )}
                 </Container>
             </div>
         </>

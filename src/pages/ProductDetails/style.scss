@@ -1,6 +1,6 @@
 @import '../../style/variables.scss';
 
-.quanti-items-holder{
+.quantity-items-holder{
     display: flex;
     align-items: center;
     grid-gap: 1rem;
@@ -23,10 +23,11 @@
         color: rgb(28 190 41 / 88%);
     }   
 
-    .quanti-box{
+    .quantity-box{
         display: flex;
         align-items: center;
         gap: 1rem;
+        
         .quantity-btn{
             width: fit-content;
             height: fit-content;
@@ -35,8 +36,6 @@
             border-style: unset;
         }
 
-
-         
     }
 
   

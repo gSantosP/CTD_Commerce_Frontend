@@ -17,7 +17,7 @@ export default function AboutUs() {
             </HelmetProvider>
             <Container id="contributors">
                 <MainTittle>Colaboradores</MainTittle>
-                <CardGroup className="cards-group list-unstyled">
+                <CardGroup className="list-unstyled">
                     {contributors.map(({ img, name, linkedin, github }, index) => {
                         return (
                             <li key={index} className="grid-item">

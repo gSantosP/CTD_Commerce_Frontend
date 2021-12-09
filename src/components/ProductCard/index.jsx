@@ -14,7 +14,7 @@ export default function ProductCard({ id, title, price, image }) {
             <Card.Body>
                 <Card.Title> {title} </Card.Title>
                 <Card.Text>{`R$ ${price && price.toFixed(2)}`}</Card.Text>
-                <Button variant="primary" onClick={()=> navigate(`/product-details/${id}`)}> Comprar </Button>
+                <Button variant="primary" onClick={()=> {navigate(`/product-details/${id}`); window.scrollTo(0, 0)}}> Comprar </Button>
             </Card.Body>
         </Card>
     )

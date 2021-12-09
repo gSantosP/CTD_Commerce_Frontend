@@ -1,4 +1,4 @@
-#contributors{
+#bootstrap-override #contributors{
     h2{
         text-align: center;
         font-size: 2.5rem;
@@ -10,13 +10,19 @@
             font-size: 1.2rem;
         }
     }
-    .cards-group.list-unstyled.card-group{
-        @media screen and (max-width: 770px){
-            display: grid;
-            grid-template-columns: 1fr;
+    
+    @media (min-width:1199px) {
+        .card-group{
+            grid-template-columns: repeat(3, 1fr);
         }
-        @media (min-width: 771px) and (max-width: 992px){
-            grid-template-columns: 1fr 1fr;
-        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 0;
+        max-width: 100%;
+
+         .card-group{
+            width: 100%;
+        } 
     }
 }

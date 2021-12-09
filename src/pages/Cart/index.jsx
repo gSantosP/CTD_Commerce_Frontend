@@ -1,21 +1,19 @@
 import "./style.scss"
 import { Table, Container, Button } from "react-bootstrap";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import trashIcon from "../../assets/svg/icons/trash.svg"
 import { CartContext } from "../../context/CartContest";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from "react-router";
-import arrowUp from "../../assets/svg/icons/Vector1.svg"
-import arrowDown from "../../assets/svg/icons/arrow-down.svg"
-
+import arrowUp from "../../assets/svg/icons/Vector1.svg";
+import arrowDown from "../../assets/svg/icons/arrow-down.svg";
+import Swal from "sweetalert2";
 
 export default function Cart() {
 
     const { productsInCart, removeProduct, clearProducts, saveProduct } = useContext(CartContext);
 
-    //const [valorTotal , setValorTotal] = useState{1}
     const navigate = useNavigate();
-
 
     const addQuantity = (product) => {
         product.quantity = product.quantity + 1
@@ -29,10 +27,13 @@ export default function Cart() {
         }
     }
 
-
-    useEffect(() => {
-
-    })
+    const toThank = () => {
+        Swal.fire({
+            icon: "success",
+            title: 'Obrigado por prestigiar nosso projeto! Esperamos que tenha gostado.',
+            background: "#EEEEEE"
+          })
+    }
 
     return (
         <>
@@ -114,7 +115,7 @@ export default function Cart() {
                                     }, 0).toFixed(2)}   
                                     </span>
                                 </div>
-                                <Button variant="primary">Finalizar Compra</Button>
+                                <Button onClick={() => toThank()} variant="primary">Finalizar Compra</Button>
                             </div>
                         </div>
                     </div>

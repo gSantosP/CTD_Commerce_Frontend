@@ -1,18 +1,13 @@
 export default function cartReducer(state, action){
     switch(action.type){
         case 'SAVE_PRODUCT':{
-            const newState = [];
-            if(state.length > 0){
-                state.forEach((product) => {
-                    if(product.id !== action.payload.id){
-                        newState.push(product);
-                    }else{
-                        newState.push(action.payload)
-                    }
-                });
-                return newState
+            const newState = [...state];
+            const indexOf = newState.indexOf(action.payload);
+            if(indexOf >= 0){
+                newState[indexOf] = action.payload;
+            } else {
+                newState.push(action.payload);
             }
-            newState.push(action.payload)
             return newState;
         }
 
