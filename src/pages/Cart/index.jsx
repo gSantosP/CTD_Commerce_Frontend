@@ -3,6 +3,7 @@ import { Table, Container, Button } from "react-bootstrap";
 import { useContext } from "react";
 import trashIcon from "../../assets/svg/icons/trash.svg"
 import { CartContext } from "../../context/CartContest";
+import  CartMobile  from "../../components/CartMobile";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from "react-router";
 import arrowUp from "../../assets/svg/icons/Vector1.svg";
@@ -35,22 +36,27 @@ export default function Cart() {
           })
     }
 
-    return (
-        <>
-            <HelmetProvider>
-                <Helmet>
-                    <title>CTD-Commerce | Carrinho</title>
-                    <link rel="canonical" href="https://www.tacobell.com/" />
-                </Helmet>
-            </HelmetProvider>
-            <Container className="cart-content">
-                {productsInCart.length ? (
-                    <div className="carrinho-holder">
+
+    let cartReturn = 
+    <div className="carrinho-placeholder d-flex flex-column align-items-center justify-content-center">
+        <h1>Ops! Parece que você não possui nenhum item no carrinho.</h1>
+        <Button onClick={() => navigate("/products")} className="send-to-back">Voltar para a pagina de produtos</Button>
+    </div>
+            
+
+    if(productsInCart.length){
+        if(window.innerWidth < 1025){
+            cartReturn = <CartMobile/>
+        }
+        else{
+            cartReturn =
+            <Container className="cart-content"> 
+            <div className="carrinho-holder">
                         <h3>Seu Carrinho</h3>
                         <Table bordered responsive className="tabela-cart">
                             <thead>
                                 <tr>
-                                    <th >Produto</th>
+                                    <th>Produto</th>
                                     <th>Preço</th>
                                     <th >Quantidade</th>
                                     <th>Total</th>
@@ -119,13 +125,27 @@ export default function Cart() {
                             </div>
                         </div>
                     </div>
-                ) : (
+                </Container>
+        }
+    }else{
+        cartReturn =
                     <div className="carrinho-placeholder d-flex flex-column align-items-center justify-content-center">
                         <h1>Ops! Parece que você não possui nenhum item no carrinho.</h1>
                         <Button onClick={() => navigate("/products")} className="send-to-back">Voltar para a pagina de produtos</Button>
                     </div>
-                )}
-            </Container>
+    }
+
+
+    return (
+        <>
+            <HelmetProvider>
+                <Helmet>
+                    <title>CTD-Commerce | Carrinho</title>
+                    <link rel="canonical" />
+                </Helmet>
+            </HelmetProvider>
+            {cartReturn}
+           
         </>
     )
 }

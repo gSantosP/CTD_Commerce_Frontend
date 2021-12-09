@@ -1,0 +1,196 @@
+@import '../../style/variables.scss';
+
+
+.mobile-cards-holder{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    .mobile-main-title{
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .mobile-card{
+        display: flex;
+        flex-direction: column;
+        padding: 0.35rem;
+        margin-top: 1rem;
+
+        .mobile-cart-content{
+            display: flex;
+
+            @media(max-width: 480px){
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mobile-content-box{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                margin-left: 1rem;
+
+                @media(max-width: 480px){
+                    margin-top:1rem;
+                    margin-left:0rem;
+                }
+
+
+                .mobile-title{
+                    p{
+                        margin-bottom: 0px;
+                        font-weight: bold;
+                        font-size: 1.3rem;
+
+                
+                    }
+                }
+
+                .middle-box{
+                    display: flex;
+
+                    .middle-box-main{
+                        width: 100%;
+                        display: flex;
+                        font-size: 1.13rem;
+                    }
+
+                    .middle-box-items{
+                        display: flex;
+                        margin-left: 1rem;
+                        gap: 0.5rem;
+                            button{
+                               width: fit-content;
+                               height: fit-content;
+                               min-width: unset;
+                               margin-top: unset;
+                               border-style: unset;
+   
+                               img{
+                                   height: 0.6rem;
+                                   width: 0.6rem;
+                               }
+                           }
+
+                       
+                    }
+                    
+                }
+
+                .bottom-box{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    width: 101%;
+                    margin-top: 1rem;
+
+                    div{
+                        .final-value-text{
+                            font-size: 1.2rem;
+                        }
+
+    
+                    }
+
+                    span{
+                        &.field-separator{
+                            margin-right: 0.55rem;
+                            margin-left: 0.55rem;
+                        }
+                    }
+
+                    p{
+                        margin-bottom: 0;
+
+                        .final-value-number{
+                            color:$orange;
+                            margin-left: 0.25rem;   
+
+                        }
+
+                       
+
+                    }
+
+                    .unity-price{
+                        @media (max-width:582px) {
+                            width:100%;
+                      }
+                    }
+                }
+            }
+
+            .mobile-img-holder{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img{
+                    height:9rem;
+                    width:9rem;
+                    object-fit: contain;
+                    border: 2px solid #d7dce6;
+                    border-radius: 12px;
+                }
+            }
+        }
+
+        .mobile-cart-index{
+            font-size: 1rem;
+        }
+
+        .mobile-cart-footer{
+            display: flex;
+            justify-content: space-between;
+            margin-top:1rem;
+
+            button{
+                border: unset;
+            }
+            button{
+                color:$deep-blue
+            }
+
+            button.mobile-remove-btn{
+                color:#fd7373;
+            }
+        }
+
+
+    }
+    
+    .mobile-holder-footer{
+        display:flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding: 0.35rem;
+        padding-top: 1rem;
+        border-top: 2px solid $light-blue;
+
+        button{
+            border: unset;
+
+            &.clear-cart-btn{
+                color:#fd7373; 
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        }
+
+        .value-btn-box{
+                button{
+                    width: 100%;
+                }
+
+                div{
+                    font-size: 1.2rem;
+                    span{
+                        color:$orange;
+                        
+                    }
+                }
+        }
+    }
+}
