@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const respClient = axios.create({
-  baseURL: 'http://179.191.226.2:81'
+  baseURL: 'http://ctdcommerceg3-env.eba-mnsdd3hp.us-east-1.elasticbeanstalk.com/'
 })
 
 export default respClient;

@@ -13,6 +13,7 @@ import ProductCard from "../../components/ProductCard";
 
 export default function ProductDetails() {
 
+    const origin = window.location.origin
     const navigate = useNavigate();
     const { productId } = useParams()
     const [product, setProduct] = useState({});
@@ -82,7 +83,7 @@ export default function ProductDetails() {
             <Container id="product-datails-content">
                 <Row xs={1} sm={2} className="d-flex flex-wrap">
                     <Col>
-                        <img className="product-picture" src={product.imageUrl} alt={`${product.title}`}></img>
+                        <img className="product-picture" src={`${origin}/${product.imageUrl}`} alt={`${product.title}`}></img>
                     </Col>
                     <Col className="d-flex flex-column justify-content-center align-items-start">
                         <SecTittle> {product.title} </SecTittle>

@@ -36,7 +36,7 @@ export default function NotFound() {
                 <MainTittle>Ops! Não encontramos o que você está procurando.</MainTittle>
                 <p>Você será redirecionado em</p>
                 <br />
-                <spam>{count}</spam>
+                <span>{count}</span>
             </div>
         </>
     )
