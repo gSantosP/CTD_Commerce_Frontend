@@ -1,6 +1,7 @@
 import "./styles.scss"
 import { Card, Button } from "react-bootstrap";
 import {useNavigate} from "react-router";
+import sendToTop from "../../util/sendToTop";
 
 export default function ProductCard({ id, title, price, image }) {
 
@@ -16,7 +17,7 @@ export default function ProductCard({ id, title, price, image }) {
             <Card.Body>
                 <Card.Title> {title} </Card.Title>
                 <Card.Text>{`R$ ${price && price.toFixed(2)}`}</Card.Text>
-                <Button variant="primary" onClick={()=> {navigate(`/product-details/${id}`); window.scrollTo(0, 0)}}> Comprar </Button>
+                <Button variant="primary" onClick={()=> {navigate(`/product-details/${id}`); sendToTop()}}> Comprar </Button>
             </Card.Body>
         </Card>
     )
