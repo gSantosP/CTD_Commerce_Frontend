@@ -7,3 +7,5 @@ Paleta de cores:
 #EEE - light_gray
 
 Figma: https://www.figma.com/file/rxmSGcKIjdholB7gpBEakL/CTD---Commerce?node-id=0%3A1
+
+Vercel: https://ctd-commerce-frontend-13xvifyhf-gsantosp.vercel.app/
