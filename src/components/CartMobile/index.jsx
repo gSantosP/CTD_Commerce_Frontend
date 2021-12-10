@@ -92,7 +92,7 @@ export default function CartMobile() {
                 <div className="mobile-holder-footer">
                     <button className="clear-cart-btn bkg-none" onClick={() => clearProducts()}>Limpar Carrinho</button>
                     <div className="value-btn-box">
-                        <div>Valor Total:
+                        <div >Valor Total:
                             <span className="price">
                                 R${productsInCart.reduce((acum, { price, quantity }) => {
                                     return acum + (price * quantity)
